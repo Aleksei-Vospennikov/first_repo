@@ -1,4 +1,20 @@
-# **Creating ssh-key and adding key to the GitHub** #
+# **Инструкция по Git и GitHub** #
 
-1) Use `ssh-keygen` for creating both keys: private one and public one
-2) Just read the manual done by ***Ivan Potylicin***! You can find it followig the [link](https://ant-lab.mipt.ru/education/get/get-students/-/blob/master/03-git/git.md "ссылочка!")
+## **Создание SSH-ключа** ##
+
+Для двухфакторной аутентификации необходимо создать пару ключей - приватный и публичный. Приватный остаётся у вас на рабочем  компьютере, публичный - на сервере. Делаем это с помощью следующей команды в терминале:
+
+```bash
+ssh-keygen -t ed25519 -C "<email>"
+```
+
+Здесь ed25519 - формат ключа, а в поле `<email>` записывается ваша электронная почта.
+Командой `ls ~/.ssh` можно проверить, что создано два файла - `id_ed25519` и `id_ed25519.pub`. Это два текстовых файла,
+отвечающих паре ключей. Вывести содержимое каждого из них можно, воспользовавшись командами: 
+
+```bash
+cat ~/.ssh/id_ed25519
+```
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
